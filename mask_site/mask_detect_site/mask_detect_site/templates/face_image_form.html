@@ -1,14 +1,42 @@
 <!DOCTYPE html> 
 <html lang="en"> 
 <head> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <meta charset="UTF-8"> 
-    <title>MASK DETECTOR</title> 
+    <title>MASK ON!</title> 
+    <style>
+        body {
+            padding-top: 7%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-image: url("../media/images/back2.png");
+            text-align: center;
+            margin: auto;
+            font-size: large;
+            background-size: 2000px 2000px;
+        }
+        img {
+            padding: 15px;
+        }
+        #media {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            width: 250px;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head> 
 <body> 
+    <img src="../media/images/logo.png">
     <form method = "post" enctype="multipart/form-data"> 
         {% csrf_token %} 
         {{ form.as_p }} 
-        <button type="submit">Analyze</button> 
+        <button type="submit" class="btn btn-success">Analyze</button>
     </form> 
+    <img id="media" src="../media/images/media.png">
 </body> 
-</html> 
+</html>
